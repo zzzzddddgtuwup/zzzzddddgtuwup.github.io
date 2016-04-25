@@ -1,0 +1,42 @@
+---
+layout: post
+title: "Instagram如何从AWS迁移到FB的数据中心"
+date: 2016-04-25 00:36:26 -0700
+comments: true
+categories: 翻译
+---
+
+感谢湾区日报筛选文章，并做出[简评](https://wanqu.co/2014-08-30-instagram如何从aws迁移到fb的数据中心.html?s=social)， 这里是[英文文章原址](http://instagram-engineering.tumblr.com/post/89992572022/migrating-aws-fb?utm_source=wanqu.co&utm_campaign=Wanqu+Daily&utm_medium=social)
+
+当Instagram在2012年加入Facebook的时候，我们在Facebook的架构上发现了大量的整合点，这些整合点可以加速我们产品的开发还可以保证社区的安全。在一开始的整合，我们使用ad-hoc端点来接入Facebook的网络服务。可是我们发现这项工作又笨重还会限制对Facebook内部服务的使用。
+
+于是在2013年4月，我们开始了大规模的迁移Instagram的后端栈，从AWS到Facebook的数据中心。这可以简化与Facebook的其他内部系统集成，还可以让我们使用FB的大规模服务器部署管理工具。最基本的迁移目标是要保持网站在这个过程中一直可用，避免影响新功能的开发，还要最小化架构的改变以免增加运维的复杂度。
+
+一开始迁移看上去很简单，在Amazon的EC2和FB的数据中心简历一个安全连接，然后一块一块的迁移服务。简单爆了！
+
+怎么会。主要的麻烦在于FB的私有IP和EC2的冲突。我们有一个规划：先迁移到Amazon的VPC（Virtual Private Cloud），然后使用(Amazon Direct Connect)[https://aws.amazon.com/cn/directconnect/]迁移到Fb的数据中心。Amazon的VPC提供了灵活的寻址模式以免和FB的私有网络冲突。
+
+这个任务看上去无比艰巨；我们运行了数千个EC2的实例，每天都有新的加入。为了最小化宕机时间和运维的难度，让EC2和VPC中的实例看上去像在同一个网络下运行非常重要。AWS并没有提供在EC2和VPC之间共享安全组或者桥接的方式。唯一的通讯方式就是使用公开的网络空间。
+
+所以我们开发了Neti--一个动态iptable操作的守护进程，它是用python编写的，后面是ZooKeeper。Neti提供了安全组的功能，而且还给每一个实例提供了一个单一的地址，无论它们是在EC2还是VPC。它管理着数千本地NAT规则，然后使用这些规则过滤每一个实例。 这样的话，互相之间的安全通信就是在同一个“叠加”的地址空间了。NAT规则在两个实例间选取最有效的通信路径。在VPC和EC2之间的通信使用公共网络，内部的流量则使用私有网络。这一切对于应用和后台系统都是透明的，因为Neti在所有实例上都使用了合适的iptable。
+
+不到三个礼拜我们就把所有的模块从EC2迁移到VPC上面了，要是没有Neti估计要花很久。在这个期间我们没发现系统有宕机，考虑到实例的规模，这应该是最快的VPC迁移了。
+
+完成VPC迁移之后，我们的实例就在兼容空间中运行，Instagram已经准备好彻底迁移到FB的数据中心了。
+
+我们之前建立了一套基于EC2的Instagram产品管理系统。这包括配置管理脚本，配置的Chef以及用于大范围操作任务的Fabric。它们用于应用的部署，数据库master的promotion。这些工具都是基于EC2的，在FB的环境中都失效了。
+
+为了提供这些配置工具的可移植性，所有的instagram相关的软件都只运行在FB的数据中心中的Linux Container（LXC）上。FB的配置工具用来构建基础系统，容器内部我们运行Chef来安装和配置Instagram相关的软件。为了支持跨EC2和FB数据中心的架构，我们增强了Chef的逻辑。它现在既支持FB内部的CentOS平台，也支持EC2的ubuntu。
+
+有些命令行工具是专门写给EC2的，比如列举正在运行的hosts以及Chef的“Knife”工具。他们都被一个单一的工具替代了。这个工具是一个抽象层，可以提供和使用EC2实例时相类似的工作流程。这样就简化了人们切换新环境的难度。
+
+一旦所有工具和环境准备就绪，Instagram的产品架构只花了2个礼拜就从VPC迁移到了FB的数据中心。
+
+这个多阶段的努力获得了巨大成功，完成了一开始的主要目标。此外，在计划和迁移过程中，我们团队还发布了像“Instagram Direct”这样的新功能，我们的用户也增加了一倍。我们坚持了一开始最小化变动的目标，所以整个过渡对于工程师团队都是透明的。
+
+回想起来，在这个为期一年的项目中有几个关键点：
+
+* 尽量做最小的改变以支持新的环境，and avoid the temptation of “while we’re here.” （我不懂这句）
+* 有时候疯狂的点子效果很好--比如Neti
+* 在工具上投入足够的精力。在实施这样大规模的迁移时最不需要的是“unexpected curveballs” （又不懂了。。）
+* 重用对团队熟悉的概念和工作流程，可以避免额外的复杂度。
