@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.1.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.1.1',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="十年饮冰，难凉热血">
+<meta property="og:type" content="website">
+<meta property="og:title" content="洞国的博客">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="洞国的博客">
+<meta property="og:description" content="十年饮冰，难凉热血">
+<meta property="og:locale" content="zh">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="洞国的博客">
+<meta name="twitter:description" content="十年饮冰，难凉热血">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>洞国的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">洞国的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Software is eating the world</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/26/career-path/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dongguo zhang">
+      <meta itemprop="description" content="十年饮冰，难凉热血">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="洞国的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2017/10/26/career-path/" class="post-title-link" itemprop="url">创业和职业规划的讲座总结（来自某位大牛分享）</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2017-10-26 23:56:11" itemprop="dateCreated datePublished" datetime="2017-10-26T23:56:11+08:00">2017-10-26</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-04 14:44:34" itemprop="dateModified" datetime="2019-05-04T14:44:34+08:00">2019-05-04</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="职业规划的几个台阶"><a href="#职业规划的几个台阶" class="headerlink" title="职业规划的几个台阶"></a>职业规划的几个台阶</h2><h3 id="第一台阶-企业内部的贡献"><a href="#第一台阶-企业内部的贡献" class="headerlink" title="第一台阶 企业内部的贡献"></a>第一台阶 企业内部的贡献</h3><ol>
+<li>人品正直</li>
+<li>忠诚度。指的是认同企业的vision和价值观。</li>
+<li>能力。</li>
+<li>结果导向。无法完成任务的人是无法为公司带来价值的。（个人认为，忠诚度加能力很强是可以带来好的结果的）</li>
+<li>责任心。可以获得信任。是在不断实现4的时候积累的。</li>
+<li>要专业化，工匠精神。</li>
+</ol>
+<p>1是必须的。2，3有可能不能两全，如果忠诚度足够，但是能力不够，老板应该努力发掘长处进行培养。如果能力很强，但是忠诚度不够，最好请他走。因为可能会造成巨大损失，比如客户发现能力很强的人不认同公司理念。</p>
+<h3 id="第二台阶-和技术无关，更关乎内心-慎独-（这个词很好）"><a href="#第二台阶-和技术无关，更关乎内心-慎独-（这个词很好）" class="headerlink" title="第二台阶 和技术无关，更关乎内心 慎独 （这个词很好）"></a>第二台阶 和技术无关，更关乎内心 慎独 （这个词很好）</h3><ol>
+<li>life long learning。信息爆炸时代，判断正确信息的能力也很重要。不仅要补技术，也可以补管理财务等知识。</li>
+<li>efficient in time management 什么最主要，排出优先级，要有方向性。</li>
+<li>梦想，野心。梦想不够大，做到一定程度就会局限。</li>
+<li>主动性，纪律性。没有被人监督。</li>
+</ol>
+<p>第二台阶之后可以担任单项目单组织的管理。</p>
+<h3 id="第三阶段-人际沟通问题"><a href="#第三阶段-人际沟通问题" class="headerlink" title="第三阶段 人际沟通问题"></a>第三阶段 人际沟通问题</h3><ol>
+<li>低调。作出成果也要展示，这是实际上是指不要以自我为中心。 </li>
+<li>和别人沟通的时候，要产生价值。和别人说话，不能让人感觉到时间被浪费。leader不需要亲力亲为，而是善于让人顿悟，这才是lead。</li>
+<li>感恩。认可别人的工作。lead不应该抢同事的credit。leader的贡献实际上是团队贡献的总和。</li>
+</ol>
+<p>实现后可以担任多项目多组织的管理，可以称为leader</p>
+<h2 id="创业"><a href="#创业" class="headerlink" title="创业"></a>创业</h2><h3 id="怎么看出一个人是否适合创业？"><a href="#怎么看出一个人是否适合创业？" class="headerlink" title="怎么看出一个人是否适合创业？"></a>怎么看出一个人是否适合创业？</h3><ol>
+<li>心理上是否ready</li>
+<li>团队是否准备好，因为创业一般都不是一个人的事情</li>
+<li>有没有合适的问题，这个问题可以带来巨大的价值</li>
+</ol>
+<h3 id="创业找一个什么样的人做partner？"><a href="#创业找一个什么样的人做partner？" class="headerlink" title="创业找一个什么样的人做partner？"></a>创业找一个什么样的人做partner？</h3><p>能力互补，三观一致。能力重叠就会浪费资源。<br>分配股权的时候一定要有轻重，一样会有问题.保证核心创业者有足够话语权，某一两个人的离开对公司没有致命的影响</p>
+<h3 id="创业有什么遗憾？"><a href="#创业有什么遗憾？" class="headerlink" title="创业有什么遗憾？"></a>创业有什么遗憾？</h3><p>过于专注已有市场，没有分出资源支持内部的创新和新市场的开发。领袖的视野要开阔</p>
+<h3 id="业余时间的建议"><a href="#业余时间的建议" class="headerlink" title="业余时间的建议"></a>业余时间的建议</h3><p>Don’t burn 不要过度消耗自己<br>无聊，浪费时间的事情少做</p>
+<p>最后一个建议：偶尔试试销售，可以能更多地了解其他人。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Dongguo zhang</p>
+              <div class="site-description motion-element" itemprop="description">十年饮冰，难凉热血</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">0</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dongguo zhang</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.1"></script>
+
+  <script src="/js/motion.js?v=7.1.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/schemes/muse.js?v=7.1.1"></script>
+
+
+
+  
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.1"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
